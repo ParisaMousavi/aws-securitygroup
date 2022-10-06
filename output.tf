@@ -1,7 +1,7 @@
 output "id" {
-  value = aws_security_group.this.id 
+  value = {for k,v in aws_security_group.this : k => v.id} 
 }
 
 output "arn" {
-  value = aws_security_group.this.arn
+  value = {for k,v in aws_security_group.this : k => v.arn} 
 }
