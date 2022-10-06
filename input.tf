@@ -19,3 +19,8 @@ variable "rules" {
     })
   }))
 }
+
+variable "additional_tags" {
+  default = {}
+  type    = map(string)
+}

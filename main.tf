@@ -15,4 +15,11 @@ resource "aws_security_group" "this" {
     protocol    = each.value.egress.protocol
     cidr_blocks = each.value.egress.cidr_blocks
   }
+
+  tags = merge(
+    var.additional_tags,
+    {
+      created-by = "iac-tf"
+    },
+  )
 }
